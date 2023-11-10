@@ -121,8 +121,33 @@ for(let j = 0; j<array_tex.length; j++){
 
  //FUNCIONES Y EVENTOS
  function load_page(){
-    alert("LA PAGINA SE HA CARGADO CORRECTAMENTE");
+    document.getElementById("nombres").focus();
+    document.getElementById("apellidos").disabled = true;
+    let date = new Date();
+    console.log(date.getMinutes());
+    for(let j=0;j<array_mul.length;j++){
+        console.log(array_mul[j].name);
+    }
+   
+    //alert("LA PAGINA SE HA CARGADO CORRECTAMENTE");
  }
+ function validate(){
+    let nombres = document.getElementById("nombres").value;
+    let nombres_style  = document.getElementById("nombres");
+    if(nombres.length > 2){
+       nombres_style.style.border = " 2px solid green";
+        document.getElementById("apellidos").disabled = false;
+        document.getElementById("apellidos").focus();
+        document.getElementById("nombres").value = "";
+        //alert(nombres.toUpperCase());
+        alert(nombres.split(" "));
+        
+        //alert(document.concat("Urrego"));
+    }
+ }
+
+
+
  function change_Color(){
     document.body.style.backgroundColor = "red";
     document.body.style.color = "#fff";
